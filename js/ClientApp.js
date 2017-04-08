@@ -1,18 +1,8 @@
-/* global React ReactDOM */
+import React from 'react'
+import ReactDOM from 'react-dom'
+import MyTitle from './MyTitle'
 
 var div = React.DOM.div
-var h1 = React.DOM.h1
-
-var MyTitle = React.createClass({
-  render: function () {
-    return (
-      div(null,
-        h1({ style: { color: this.props.color } }, this.props.title) // 'this' reffers to var MyTitle = React.createClass'
-                                        // 'props' reffers to arguments passed by parent;
-      )
-    )
-  }
-})
 
 var MyTitleFactory = React.createFactory(MyTitle)
 
