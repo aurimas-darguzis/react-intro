@@ -5,7 +5,8 @@
           render: function () {
               return (
                   div(null,
-                    h1(null, 'check out this component')
+                    h1(null, this.props.title) // 'this' reffers to var MyTitle = React.createClass'
+                                               // 'props' reffers to arguments passed by parent;
                   )
               )
           }
@@ -17,10 +18,10 @@
         render: function() {
           return (
             div(null,
-              MyTitleFactory(MyTitle),
-              MyTitleFactory(MyTitle),
-              MyTitleFactory(MyTitle),
-              MyTitleFactory(MyTitle)
+              MyTitleFactory({ title: 'props are the best' }),
+              MyTitleFactory({ title: 'semicolons are the wors' }),
+              MyTitleFactory({ title: 'its okay if you like semicolons' }),
+              MyTitleFactory({ title: 'im out of ideas '})
             )
           )
         }
