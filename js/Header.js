@@ -15,4 +15,11 @@ class Header extends React.Component {
   }
 }
 
+const { func, bool, string } = React.propTypes
+Header.propTypes = {
+  handleSearchTermChange: func,
+  showSearch: bool,
+  searchTerm: string
+}
+
 export default Header
