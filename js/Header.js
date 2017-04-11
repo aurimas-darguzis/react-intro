@@ -16,6 +16,7 @@ class Header extends React.Component {
 }
 
 const { func, bool, string } = React.propTypes
+
 Header.propTypes = {
   handleSearchTermChange: func,
   showSearch: bool,
