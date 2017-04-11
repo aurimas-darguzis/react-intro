@@ -8,6 +8,7 @@
   "scripts": {
     "test": "NODE_ENV=test jest",
     "update-test": "npm run test -- -u",
+    "cover": "npm run test -- --coverage",
     "build": "webpack",
     "dev": "webpack-dev-server",
     "lint": "eslint js/**/*.js js/**/*.jsx webpack.config.js",
