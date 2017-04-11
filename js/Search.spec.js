@@ -17,7 +17,7 @@ test('Search should render a ShowCard for each show', () => {
 })
 
 test('Search should render correct amount fo shows based on search', () => {
-  const searchWord = 'house';
+  const searchWord = 'house'
   const component = shallow(<Search />)
   component.find('input').simulate('change', {target: {value: searchWord}})
   const showCount = preload.shows.filter((show) => `${show.title} ${show.description}`
