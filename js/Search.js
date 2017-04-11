@@ -22,7 +22,7 @@ const Search = React.createClass({
       <div className='search'>
         <header>
           <h1>svideo</h1>
-          
+
         </header>
         <div>
           {this.props.shows
