@@ -6,7 +6,7 @@ const Details = React.createClass({
       <div className='details'>
         <pre>
           <code>
-          {JSON.stringify(this.props, null, 4)}
+            {JSON.stringify(this.props, null, 4)}
           </code>
         </pre>
       </div>
