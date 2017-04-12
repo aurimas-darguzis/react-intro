@@ -12,6 +12,8 @@ const Landing = React.createClass({
   },
   handleSearchTermChange (event) {
     // dispatch comes from connect
+    // this is how you pass to the rootReducer the changed state
+    // dispatch is an action to the root reducer
     this.props.dispatch(setSearchTerm(event.target.value))
   },
   render () {
