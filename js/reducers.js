@@ -4,12 +4,11 @@ const DEFAULT_STATE = {
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    // case: SET_SEARCH_TERM 
+    // case: SET_SEARCH_TERM
 
-    
-    default: 
-    return state
-  }  
+    default:
+      return state
+  }
 }
 
 export default rootReducer
