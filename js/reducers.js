@@ -13,7 +13,7 @@ const setSearchTerm = (state, action) => {
 
 const addOMDBData = (state, action) => {
   const newOMDBData = {}
-  Object.assign(newOMDBData, state.omdbData, {[action.imdbId] : action.omdbData})
+  Object.assign(newOMDBData, state.omdbData, {[action.imdbId]: action.omdbData})
   const newState = {}
   Object.assign(newState, state, {omdbData: newOMDBData})
   return newState
