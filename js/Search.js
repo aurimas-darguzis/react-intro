@@ -14,7 +14,7 @@ const Search = React.createClass({
   render () {
     return (
       <div className='search'>
-        <Header showSearch/>
+        <Header showSearch />
         <div>
           {this.props.shows
             .filter((show) => {
