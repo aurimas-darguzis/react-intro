@@ -13,7 +13,7 @@ const setSearchTerm = (state, action) => {
 
 const addOMDBData = (state, action) => {
   const newOMDBData = {}
-  Object.assign(newOMDBData, state.omdbData, {[action.imdbId]: action.omdbData})
+  Object.assign(newOMDBData, state.omdbData, {[action.imdbID]: action.omdbData})
   const newState = {}
   Object.assign(newState, state, {omdbData: newOMDBData})
   return newState
@@ -25,7 +25,6 @@ const rootReducer = (state = DEFAULT_STATE, action) => {
       return setSearchTerm(state, action)
     case ADD_OMDB_DATA:
       return addOMDBData(state, action)
-
     default:
       return state
   }

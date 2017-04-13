@@ -6,7 +6,7 @@ import { Link } from 'react-router'
 class Header extends React.Component {
   constructor (props) {
     super(props)
-    // making sure HEADER is 'this'
+
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
   }
   handleSearchTermChange (event) {
@@ -17,9 +17,9 @@ class Header extends React.Component {
     if (this.props.showSearch) {
       utilSpace = <input onChange={this.handleSearchTermChange} value={this.props.searchTerm} type='text' placeholder='Search' />
     } else {
-      utliSpace = (
+      utilSpace = (
         <h2>
-          <Link to='/search' >
+          <Link to='/search'>
             Back
           </Link>
         </h2>
@@ -28,18 +28,17 @@ class Header extends React.Component {
     return (
       <header>
         <h1>
-          <Link to='/' >
+          <Link to='/'>
             svideo
           </Link>
         </h1>
-        {utliSpace}
+        {utilSpace}
       </header>
     )
   }
 }
 
-const { func, bool, string } = React.propTypes
-
+const { func, bool, string } = React.PropTypes
 Header.propTypes = {
   dispatch: func,
   showSearch: bool,

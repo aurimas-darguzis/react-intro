@@ -8,18 +8,14 @@ const Landing = React.createClass({
   contextTypes: {
     router: object
   },
-  // this is comming from redux via connect
-  propType: {
+  propTypes: {
     searchTerm: string,
-    dispatch: func
+    dispatchSetSearchTerm: func
   },
   handleSearchTermChange (event) {
-    // dispatch comes from connect
-    // this is how you pass to the rootReducer the changed state
-    // dispatch is an action to the root reducer
-    this.props.dispatch(setSearchTerm(event.target.value))
+    this.props.dispatchSetSearchTerm(event.target.value)
   },
-  hadleSearchSubmit (event) {
+  handleSearchSubmit (event) {
     event.preventDefault()
     this.context.router.transitionTo('/search')
   },
@@ -28,7 +24,7 @@ const Landing = React.createClass({
       <div className='landing'>
         <h1>svideo</h1>
         <form onSubmit={this.handleSearchSubmit}>
-          <input onChange={this.handleSearchTermChange} value={this.props.searchTerm} type='text' placeholder='search' />
+          <input onChange={this.handleSearchTermChange} value={this.props.searchTerm} type='text' placeholder='Search' />
         </form>
         <Link to='/search'>or Browse All</Link>
       </div>
@@ -36,11 +32,18 @@ const Landing = React.createClass({
   }
 })
 
-// pull from redux and pass as a prop
 const mapStateToProps = (state) => {
   return {
     searchTerm: state.searchTerm
   }
 }
 
-export default connect(mapStateToProps)(Landing)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchSetSearchTerm (searchTerm) {
+      dispatch(setSearchTerm(searchTerm))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landing)

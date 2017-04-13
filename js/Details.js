@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import { connect } from 'react-redux'
 import { getOMDBDetails } from './actionCreators'
 import Header from './Header'
@@ -40,7 +39,7 @@ const Details = React.createClass({
           <h1>{title}</h1>
           <h2>({year})</h2>
           {rating}
-          <img src={`/public/img/posters/${poster}`} alt='make web accessible' />
+          <img src={`/public/img/posters/${poster}`} />
           <p>{description}</p>
         </section>
         <div>
@@ -53,6 +52,11 @@ const Details = React.createClass({
 
 const mapStateToProps = (state, ownProps) => {
   const omdbData = state.omdbData[ownProps.show.imdbID] ? state.omdbData[ownProps.show.imdbID] : {}
+  // if (state.omdbData[ownProps.show.imdbID]) {
+  //   omdbData = state.omdbData[ownProps.show.imdbID]
+  // } else {
+  //   omdbData = {}
+  // }
   return {
     omdbData
   }

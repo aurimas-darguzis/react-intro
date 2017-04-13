@@ -6,7 +6,7 @@ import store from './store'
 import Landing from './Landing'
 import Search from './Search'
 import Details from './Details'
-import { preload } from '../public/data.json'
+import preload from '../public/data.json'
 import '../public/normalize.css'
 import '../public/style.css'
 
@@ -20,13 +20,14 @@ const App = React.createClass({
             <Match
               pattern='/search'
               component={(props) => <Search shows={preload.shows} {...props} />}
-              />
+            />
             <Match
               pattern='/details/:id'
               component={(props) => {
-                const show = preload.shows.filter((show) => props.params.id === show.imdbID)
-                return <Details show={show[0]} {...props} />
-              }} />
+                const shows = preload.shows.filter((show) => props.params.id === show.imdbID)
+                return <Details show={shows[0]} {...props} />
+              }}
+            />
           </div>
         </Provider>
       </BrowserRouter>
