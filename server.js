@@ -17,15 +17,15 @@ const server = express()
 server.use('/public', express.static('./public'))
 
 server.use((req, res) => {
-  const context = ReactRouter.createServerRenderContext() 
+  const context = ReactRouter.createServerRenderContext()
   const body = ReactDOMServer.renderToString(
     React.createElement(ServerRouter, {location: req.url, context: context},
       React.createElement(App)
     )
   )
 
-res.write(template({body: body}))
-res.end()
+  res.write(template({body: body}))
+  res.end()
 })
 
 console.log('listening on port', PORT)
