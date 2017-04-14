@@ -14,13 +14,6 @@ module.exports = {
     publicPath: '/public/',
     historyApiFallback: true
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress:{
-        warnings: true
-      }
-    })
-  ],
   resolve: {
     extensions: ['.js', '.json']
   },
