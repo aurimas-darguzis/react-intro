@@ -6,6 +6,10 @@ Welcome to a complete intro to React! The site actual workshop material for this
 
 Please contribute, file issues, and make PRs. More than anything I'm sure there are typos abounding.
 
+## Podcast
+
+https://react30.com/
+
 ## License
 
 MIT
